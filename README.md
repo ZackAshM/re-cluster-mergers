@@ -1,0 +1,2 @@
+# Cluster Mergers
+This is a rewritten version of [cluster-mergers](https://github.com/ZackAshM/cluster-mergers) in order to practice better c++ practices. The function of this project is to simulate the merging of galaxy clusters through implementation of the Barnes-Hut algorithm in c++.
