@@ -15,7 +15,7 @@ ostream& operator<<(ostream& os, const Body &body) {
   return os << "Mass: " << body.mass << ", Position: " << body.position << ", Velocity: " << body.velocity;
 }
 
-void Body::update(double mass, Vector3D &position, Vector3D &velocity) {
+void Body::update(double mass, Vector3D position, Vector3D velocity) {
   this->mass = mass;
   this->position.update( position.x(), position.y(), position.z() );
   this->velocity.update( velocity.x(), velocity.y(), velocity.z() );

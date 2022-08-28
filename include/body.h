@@ -20,7 +20,7 @@ struct Body
 
   friend ostream& operator<<(ostream& os, const Body &body);
 
-  void update(double mass, Vector3D &position, Vector3D &velocity);
+  void update(double mass, Vector3D position, Vector3D velocity);
 };
 
 #endif
