@@ -1,8 +1,8 @@
 #ifndef SOLVER_H
 #define SOLVER_H
 
-#include "vector.h"
+#include "body.h"
 
-extern Vector3D solver();
+extern Body solver(Body &thisbody, Body &thatbody, double dt);
 
 #endif
