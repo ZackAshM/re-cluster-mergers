@@ -81,3 +81,10 @@ Vector3D Vector3D::cross(const Vector3D &v) const {
 ostream& operator<<(ostream& os, const Vector3D &v) {
   return os << "(" << v._x << ", " << v._y << ", " << v._z << ")";
 }
+
+// update coords
+void Vector3D::update(double x, double y, double z) {
+  this->_x = x;
+  this->_y = y;
+  this->_z = z;
+}

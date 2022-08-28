@@ -24,10 +24,13 @@ DEPS := $(wildcard $(INC)/*.h)
 
 
 # --- main commands ---
-all: simulate vector3d body gravity FRK4
+all: simulate orbit vector3d body gravity solver
 
-simulate: $(DEPS) vector3d body gravity FRK4
-	$(CC) $(FLAGS) $(ALLFLAGS) vector3d.o body.o gravity.o FRK4.o $(SRC)/simulate.cpp -o $(BIN)/simulate $(LIBS)
+simulate: $(DEPS) vector3d body gravity solver
+	$(CC) $(FLAGS) $(ALLFLAGS) vector3d.o body.o gravity.o solver.o $(SRC)/simulate.cpp -o $(BIN)/simulate $(LIBS)
+
+orbit: $(DEPS) vector3d body gravity solver
+	$(CC) $(FLAGS) $(ALLFLAGS) vector3d.o body.o gravity.o solver.o $(SRC)/orbit.cpp -o $(BIN)/orbit $(LIBS)
 
 # --- dependencies ---
 vector3d: $(SRC)/vector3d.cpp $(INC)/vector3d.h
@@ -39,8 +42,8 @@ body: $(SRC)/body.cpp $(INC)/body.h
 gravity: $(SRC)/gravity.cpp $(INC)/gravity.h $(INC)/constants.h
 	$(CC) -I$(INC) $(ALLFLAGS) -c $(SRC)/gravity.cpp
 
-FRK4: $(SRC)/FRK4.cpp $(INC)/FRK4.h vector3d
-	$(CC) -I$(INC) $(ALLFLAGS) -c $(SRC)/FRK4.cpp
+solver: $(SRC)/solver.cpp $(INC)/solver.h body vector3d gravity
+	$(CC) -I$(INC) $(ALLFLAGS) -c $(SRC)/solver.cpp
 
 
 clean:

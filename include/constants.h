@@ -5,8 +5,8 @@ namespace astrophysical_constants
 {
   
   // for gravitational force calculation
-  inline constexpr double G{1};                // gravitational constant
-  inline constexpr double R_BUFFER{0.01};      // distance modifier to prevent divide by 0
+  inline constexpr double G{6.6380e-5};        // gravitational constant [m^3 / kg / yr^2]
+  inline constexpr double R_BUFFER{0.01};      // distance modifier to prevent divide by 0 [m]
 
 }
 

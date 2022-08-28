@@ -8,7 +8,7 @@ using namespace std;
 class Vector3D
 {
  private:
-  const double _x, _y, _z;
+  double _x, _y, _z;
 
  public:
   Vector3D();
@@ -32,6 +32,8 @@ class Vector3D
   Vector3D cross(const Vector3D &v) const;
 
   friend ostream& operator<<(ostream& os, const Vector3D &v);
+
+  void update(double x, double y, double z);
   
 };
 
